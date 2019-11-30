@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://car_select.js" type="Script" id=1]
+[ext_resource path="res://Images/choose_van.png" type="Texture" id=2]
+[ext_resource path="res://Images/choose_trailer.png" type="Texture" id=3]
+[ext_resource path="res://Images/choose_tow.png" type="Texture" id=4]
+
+[node name="base" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+script = ExtResource( 1 )
+__meta__ = {
+"__editor_plugin_screen__": "2D",
+"_edit_use_anchors_": false
+}
+
+[node name="van 1" type="Button" parent="."]
+margin_left = 4.0
+margin_top = 160.0
+margin_right = 340.0
+margin_bottom = 400.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+icon = ExtResource( 2 )
+
+[node name="van 2" type="Button" parent="."]
+margin_left = 344.0
+margin_top = 160.0
+margin_right = 680.0
+margin_bottom = 401.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+icon = ExtResource( 3 )
+
+[node name="van 3" type="Button" parent="."]
+margin_left = 684.0
+margin_top = 160.0
+margin_right = 1020.0
+margin_bottom = 400.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+icon = ExtResource( 4 )
+[connection signal="pressed" from="van 1" to="." method="_on_van_1_pressed"]
+[connection signal="pressed" from="van 2" to="." method="_on_van_2_pressed"]
+[connection signal="pressed" from="van 3" to="." method="_on_van_3_pressed"]
