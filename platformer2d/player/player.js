@@ -6,7 +6,7 @@ const JUMP_SPEED = 480;
 const SIDING_CHANGE_SPEED = 10;
 const BULLET_VELOCITY = 1000;
 const SHOOT_TIME_SHOW_WEAPON = 0.2;
-const Bullet = godot.ResourceLoader.load("res://player/Bullet.tscn");
+import Bullet from "res://player/Bullet.tscn";
 export default class Player extends godot.KinematicBody2D {
 	
 	linear_vel = new godot.Vector2();

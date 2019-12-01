@@ -260,6 +260,7 @@ material/0 = null
 
 [node name="twheel3" type="VehicleWheel" parent="TRAILER"]
 transform = Transform( 1, 0, 0, 0, 1, -1.49012e-08, 0, 0, 1, -0.573678, -0.402732, -1.53277 )
+engine_force = 0.000172795
 wheel_roll_influence = 0.4
 wheel_radius = 0.1
 wheel_friction_slip = 1.0
@@ -390,7 +391,8 @@ current = true
 fov = 74.0
 near = 0.1
 script = ExtResource( 5 )
-min_distance = 7.0
+min_distance = 4.0
+max_distance = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 _import_path = NodePath("AnimationPlayer")
