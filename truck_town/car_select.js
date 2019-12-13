@@ -11,7 +11,7 @@ export default class CarSelect extends godot.Control {
 		tt.name = "car";
 		this.town = godot.load("res://town_scene.tscn").instance();
 		this.town.get_node("instance_pos").add_child(tt);
-		this.town.get_node("back").connect(godot.BaseButton.pressed, this, '_back');
+		this.town.get_node("back").connect(godot.BaseButton.pressed, this, this._back);
 		this.get_parent().add_child(this.town);
 		this.hide();
 	}
