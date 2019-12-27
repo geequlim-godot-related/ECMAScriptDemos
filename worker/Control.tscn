@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Control.js" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "default"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[node name="Control" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 70, 74 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="icon"]
+autoplay = "default"
+anims/default = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 137.0
+margin_top = 66.0
+margin_right = 192.0
+margin_bottom = 80.0
+text = "Fib:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Result" type="Label" parent="."]
+margin_left = 202.0
+margin_top = 66.0
+margin_right = 340.0
+margin_bottom = 80.0
+text = "Fib:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 44.0
+margin_top = 141.0
+margin_right = 284.0
+margin_bottom = 248.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_right = 240.0
+margin_bottom = 20.0
+text = "Calculate in Main Thread"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 240.0
+margin_bottom = 44.0
+text = "Calculate in Worker"
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="calculate_in_main_thread"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="calculate_in_worker"]
