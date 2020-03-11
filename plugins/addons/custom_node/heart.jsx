@@ -11,4 +11,4 @@ export default class Heart extends godot.Node2D {
 		return rect;
 	}
 }
-godot.set_script_meta(Heart, true);
+godot.set_script_tooled(Heart, true);

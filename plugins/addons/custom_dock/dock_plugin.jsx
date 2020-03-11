@@ -11,4 +11,4 @@ export default class CustomDock extends godot.EditorPlugin {
 		this.dock.free();
 	}
 }
-godot.set_script_meta(CustomDock, true);
+godot.set_script_tooled(CustomDock, true);

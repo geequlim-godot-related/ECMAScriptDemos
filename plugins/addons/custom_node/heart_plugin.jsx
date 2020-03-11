@@ -12,4 +12,4 @@ export default class HeartPlugin extends godot.EditorPlugin {
 		this.remove_custom_type("Heart");
 	}
 }
-godot.set_script_meta(HeartPlugin, true);
+godot.set_script_tooled(HeartPlugin, true);
