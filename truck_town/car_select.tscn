@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://car_select.js" type="Script" id=1]
+[ext_resource path="res://car_select.jsx" type="Script" id=1]
 [ext_resource path="res://Images/choose_van.png" type="Texture" id=2]
 [ext_resource path="res://Images/choose_trailer.png" type="Texture" id=3]
 [ext_resource path="res://Images/choose_tow.png" type="Texture" id=4]

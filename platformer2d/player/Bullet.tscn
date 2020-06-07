@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://player/bullet.js" type="Script" id=1]
+[ext_resource path="res://player/bullet.jsx" type="Script" id=1]
 [ext_resource path="res://player/bullet.png" type="Texture" id=2]
 
 [sub_resource type="CanvasItemMaterial" id=1]
