@@ -3,7 +3,7 @@ export default class HeartPlugin extends godot.EditorPlugin {
 		this.add_custom_type(
 			"Heart",
 			"Node2D",
-			godot.load("res://addons/custom_node/heart.js"),
+			godot.load("res://addons/custom_node/heart.jsx"),
 			godot.load("res://addons/custom_node/heart_icon.png")
 		);
 	}

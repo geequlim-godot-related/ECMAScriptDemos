@@ -1,4 +1,4 @@
-const HEART = godot.load("res://addons/custom_node/heart.png");
+import HEART from "res://addons/custom_node/heart.png";
 
 export default class Heart extends godot.Node2D {
 	_draw() {
@@ -7,7 +7,6 @@ export default class Heart extends godot.Node2D {
 
 	_get_item_rect() {
 		let rect = new godot.Rect2(HEART.get_size() * new godot.Vector2(-0.5), HEART.get_size());
-		console.log(rect);
 		return rect;
 	}
 }
