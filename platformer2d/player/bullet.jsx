@@ -7,6 +7,6 @@ export default class Bullet extends godot.RigidBody2D {
 	}
 	
 	_on_Timer_timeout() {
-		this.get_node('Anim').play('shutdown');
+		this.$(godot.AnimationPlayer).play('shutdown');
 	}
 }

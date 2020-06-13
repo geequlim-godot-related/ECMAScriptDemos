@@ -13,11 +13,11 @@ export default class Enermy extends godot.KinematicBody2D {
 	state = STATE_WALKING;
 	
 	_ready() {
-		this.DetectFloorLeft = this.get_node('DetectFloorLeft');
-		this.DetectWallLeft = this.get_node('DetectWallLeft');
-		this.DetectFloorRight = this.get_node('DetectFloorRight');
-		this.DetectWallRight = this.get_node('DetectWallRight');
-		this.sprite = this.get_node('Sprite');
+		this.DetectFloorLeft = this.$('DetectFloorLeft');
+		this.DetectWallLeft = this.$('DetectWallLeft');
+		this.DetectFloorRight = this.$('DetectFloorRight');
+		this.DetectWallRight = this.$('DetectWallRight');
+		this.sprite = this.$('Sprite');
 	}
 	
 	_physics_process(delta) {
@@ -38,7 +38,7 @@ export default class Enermy extends godot.KinematicBody2D {
 		}
 		if (this.anim != new_anim) {
 			this.anim = new_anim;
-			this.get_node('Anim').play(this.anim);
+			this.$('Anim').play(this.anim);
 		}
 	}
 	

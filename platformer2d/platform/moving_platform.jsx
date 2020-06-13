@@ -7,7 +7,7 @@ export default class MovingPlatform extends godot.Node2D {
 		let d = godot.sin(this.accum);
 		let xf = new godot.Transform2D();
 		xf.origin = this.motion * new godot.Vector2(d);
-		this.get_node("Platform").transform = xf;
+		this.$("Platform").transform = xf;
 	}
 }
 

@@ -14,7 +14,7 @@ export default class Player extends godot.KinematicBody2D {
 	anim = "";
 	
 	_ready() {
-		this.sprite = this.get_node('Sprite');
+		this.sprite = this.$(godot.Sprite);
 	}
 	
 	_physics_process(delta) {
@@ -44,17 +44,17 @@ export default class Player extends godot.KinematicBody2D {
 		// Jumping
 		if (on_floor && godot.Input.is_action_just_pressed("jump")) {
 			this.linear_vel.y = -JUMP_SPEED;
-			this.get_node("SoundJump").play();
+			this.$("SoundJump").play();
 		}
 		
 		// Shooting
 		if (godot.Input.is_action_just_pressed("shoot")) {
 			let bullet = Bullet.instance();
-			bullet.position = this.get_node('Sprite/BulletShoot').global_position; // use node for shoot position
+			bullet.position = this.$('Sprite/BulletShoot').global_position; // use node for shoot position
 			bullet.linear_velocity = new godot.Vector2(this.sprite.scale.x * BULLET_VELOCITY, 0);
 			bullet.add_collision_exception_with(this); // don't want player to collide with bullet
 			this.get_parent().add_child(bullet) // don't want bullet to move with me, so add it as child of parent
-			this.get_node('SoundShoot').play();
+			this.$('SoundShoot').play();
 			this.shoot_time = 0;
 		}
 		
@@ -96,7 +96,7 @@ export default class Player extends godot.KinematicBody2D {
 		
 		if (new_anim != this.anim) {
 			this.anim = new_anim;
-			this.get_node("Anim").play(this.anim);
+			this.$(godot.AnimationPlayer).play(this.anim);
 		}
 	}
 }
