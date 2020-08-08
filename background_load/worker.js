@@ -11,7 +11,7 @@ function load_resource(path) {
         err = ril.poll();
     }
     if (godot.ERR_FILE_EOF == err) {
-        globalThis.postMessage({ type: "done", resource: Worker.abandonValue(ril.get_resource()), path });
+        globalThis.postMessage({ type: "done", resource: godot.abandon_value(ril.get_resource()), path });
     }
     else {
         globalThis.postMessage({ type: "error", error: err, path });
