@@ -1,4 +1,17 @@
 export default class global extends godot.Node {
+	static #sigleton;
+
+	static get singleton() {
+		return global.#sigleton;
+	}
+
+	constructor() {
+		super();
+		if (!global.#sigleton) {
+			global.#sigleton = this;
+		}
+	}
+
 	
 	goto_scene(path) {
 		this.call_deferred("_deferred_goto_scene", path);
