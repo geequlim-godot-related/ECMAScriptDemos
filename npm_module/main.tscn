@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://main.jsx" type="Script" id=1]
+[ext_resource path="res://scripts/build/src/view/main.jsx" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://components/TimeLabel.tscn" type="PackedScene" id=3]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
+"icon " = NodePath("icon")
 
 [node name="icon" type="Sprite" parent="."]
 position = Vector2( 354, 242.75 )
 texture = ExtResource( 2 )
+
+[node name="TimeLabel" parent="." instance=ExtResource( 3 )]
+rect_scale = Vector2( 3, 3 )
+custom_colors/font_color = Color( 0.176471, 0.980392, 0.054902, 1 )
+text = "ABC"

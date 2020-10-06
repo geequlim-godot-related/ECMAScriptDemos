@@ -1,0 +1,10 @@
+{
+    "bundles": [
+        "src/index.ts"
+    ],
+    "compile_only": [
+        "src/decorators.ts",
+        "src/**/*.tsx",
+        "src/**/*.jsx"
+    ]
+}

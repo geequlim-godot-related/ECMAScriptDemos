@@ -1,0 +1,35 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "godot-quickjs",
+            "request": "launch",
+            "name": "Launch Godot",
+            "sourceMaps": true,
+            "program": "/home/geequlim/Documents/Workspace/Develop/Godot/godot/bin/godot.x11.tools.64.llvm"
+        },
+        {
+            "type": "godot-quickjs",
+            "request": "attach",
+            "name": "Attach to Godot",
+            "hostname": "localhost",
+            "port": 5556
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Build Script",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/scripts/build.js",
+            "cwd": "${workspaceFolder}/scripts",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        }
+    ]
+}

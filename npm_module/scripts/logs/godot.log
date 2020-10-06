@@ -1,0 +1,5 @@
+Godot Engine v3.2.4.beta.custom_build.68b192b62 - https://godotengine.org
+OpenGL ES 3.0 Renderer: Mesa Intel(R) UHD Graphics (CML GT2)
+ 
+**ERROR**: Condition "default_certs != __null" is true.
+   At: modules/mbedtls/crypto_mbedtls.cpp:201:load_default_certificates() - Condition "default_certs != __null" is true.
