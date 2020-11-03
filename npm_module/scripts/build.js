@@ -13,6 +13,10 @@ const options = {
 }
 const scripts = require('./scripts.json');
 
+function normalize_path(path) {
+	return path.replace(/\\/g, '/');
+}
+
 function update_entries() {
 	let patterns = scripts.bundles || [];
 	scripts.bundles = [];
@@ -36,6 +40,7 @@ function watch() {
 	update_entries();
 	chokidar.watch(options.sourceRoot).on('all', (event, input) => {
 		if (!fs.existsSync(input) || !fs.statSync(input).isFile()) return;
+		input = normalize_path(input);
 		let output = null;
 		switch (event) {
 			case 'add':
@@ -66,7 +71,7 @@ function get_build_target(input) {
 	if (matches[0] === '.d.ts') return;
 	if (scripts.bundles.indexOf(input) == -1 && scripts.compile_only.indexOf(input) == -1) return;
 	const target = path.join(options.outRoot, input).replace('.ts', '.js');
-	return target;
+	return normalize_path(target);
 }
 
 function entry_is_bundle(input) {
