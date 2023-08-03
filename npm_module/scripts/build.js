@@ -33,7 +33,7 @@ function update_entries() {
 }
 
 function clean() {
-	fs.rmdirSync(options.outRoot, {recursive: true});
+	if (fs.existsSync(options.outRoot)) fs.rmdirSync(options.outRoot, {recursive: true});
 }
 
 function watch() {
